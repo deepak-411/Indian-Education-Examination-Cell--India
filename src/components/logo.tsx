@@ -9,6 +9,7 @@ export function Logo({ className }: { className?: string }) {
       width={256}
       height={256}
       className={cn(className)}
+      unoptimized
     />
   );
 }
