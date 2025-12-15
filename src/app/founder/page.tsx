@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Star, ShieldCheck, Award, Flag, Cpu, CheckCircle2, Target, Eye } from 'lucide-react';
