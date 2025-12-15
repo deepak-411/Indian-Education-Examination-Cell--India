@@ -50,15 +50,16 @@ export function DashboardSidebar({ isAdmin }: DashboardSidebarProps) {
         <SidebarMenu>
           {menuItems.map((item) => (
             <SidebarMenuItem key={item.href}>
-              <Link href={item.href} legacyBehavior passHref>
-                <SidebarMenuButton
-                  isActive={pathname === item.href}
-                  tooltip={{ children: item.label, side: "right", align: "center" }}
-                >
+              <SidebarMenuButton
+                asChild
+                isActive={pathname === item.href}
+                tooltip={{ children: item.label, side: "right", align: "center" }}
+              >
+                <Link href={item.href}>
                   <item.icon />
                   <span>{item.label}</span>
-                </SidebarMenuButton>
-              </Link>
+                </Link>
+              </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
         </SidebarMenu>
@@ -66,14 +67,16 @@ export function DashboardSidebar({ isAdmin }: DashboardSidebarProps) {
       <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
-            <Link href="/dashboard/settings" legacyBehavior passHref>
-              <SidebarMenuButton 
-                isActive={pathname === "/dashboard/settings"}
-                tooltip={{ children: "Settings", side: "right", align: "center" }}>
+            <SidebarMenuButton
+              asChild
+              isActive={pathname === "/dashboard/settings"}
+              tooltip={{ children: "Settings", side: "right", align: "center" }}
+            >
+              <Link href="/dashboard/settings">
                 <Settings />
                 <span>Settings</span>
-              </SidebarMenuButton>
-            </Link>
+              </Link>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
