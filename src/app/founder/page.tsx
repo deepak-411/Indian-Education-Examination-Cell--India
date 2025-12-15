@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, GraduationCap, Star, Trophy, Building, CheckCircle2 } from 'lucide-react';
+import { Briefcase, GraduationCap, Star, Trophy, Building, CheckCircle2, ShieldCheck, Award, Flag, Cpu } from 'lucide-react';
 import { placeholderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -11,25 +11,48 @@ const professionalExperience = [
     {
         title: "Software Engineer",
         company: "Ecolab (India)",
-        description: "Worked on large-scale, data-driven and cloud-based systems with strict performance and security requirements.",
+        duration: "June 2023 – January 2025",
+        description: "Designed and developed scalable, data-driven software systems, built cloud-based microservices for industrial IoT applications, and worked on performance optimization and AI-powered predictive solutions.",
     },
     {
-        title: "AI/ML Intern",
-        company: "Indian Air Force (Remote)",
-        description: "Developed intelligent models in a high-security environment.",
+        title: "AI / ML Internship",
+        company: "Indian Air Force (Remote, Delhi)",
+        description: "Developed AI models in a high-security captive environment, working on intelligent decision-support and automation systems, strengthening understanding of secure systems.",
     },
     {
-        title: "Open Source Contributor",
-        company: "Google Summer of Code (PostgreSQL)",
-        description: "Contributed to the PostgreSQL project, enhancing database functionalities.",
+        title: "Google Summer of Code",
+        company: "PostgreSQL (Open Source Contributor)",
+        description: "Contributed to PostgreSQL’s pgarchives portal, improving performance, UI/UX, and system reliability in collaboration with global open-source engineers.",
     }
-]
+];
 
 const governmentCredentials = [
     "Qualified UPSC Civil Services Examination (CSE) Mains – 2023",
-    "Selected in UPSC – Deputy Central Intelligence Officer (DCIO – Technical)",
-    "Selected in UPSC – CBI Assistant Programmer"
-]
+    "Selected – UPSC Deputy Central Intelligence Officer (DCIO – Technical)",
+    "Selected – UPSC CBI Assistant Programmer"
+];
+
+const defenceCredentials = [
+    "Indian Navy SSC (2023–24): Cleared SSB Interview & Conference (Medically Out)",
+    "Indian Army – Technical Graduate Course (TGC): SSB Call Letter Issued (Conference Out)"
+];
+
+const flagshipProjects = [
+    { title: "KeepTab – AI-Based Wearable Memory Assistant", description: "Deep-learning powered device to help users recall object locations, integrating camera, accelerometer, and voice assistant." },
+    { title: "Farmer Crop Insurance Claim System (PMFBY)", description: "Government-oriented web system for transparent insurance claim tracking." },
+    { title: "Deepak’s Algorithm", description: "Optimized algorithm for high-performance data processing." },
+    { title: "University Management & Student Apps", description: "Systems with secure authentication, real-time notifications, and dashboards." }
+];
+
+const awards = [
+    "Nominated for Padma Shri Award 2024 (Science & Engineering)",
+    "Winner / Top Performer in multiple national & international hackathons",
+    "Google Cloud Skill Boost – Silver League (AI & Generative Models)",
+    "Young Scientist Awards (National Level)",
+    "KVPY Fellow (SX)",
+    "Scientist for a Day – NASA",
+    "100+ recognitions in innovation, coding, and research",
+];
 
 export default function FounderPage() {
     const founderImage = placeholderImages.find(p => p.id === 'founder-image');
@@ -91,21 +114,49 @@ export default function FounderPage() {
             </Card>
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><GraduationCap className="size-5 text-primary" /> Academic & Technical</CardTitle>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><GraduationCap className="size-5 text-primary" /> Educational Background</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-2">
                      <div>
                         <p className="font-semibold">B.Tech in Computer Science & Engineering</p>
                         <p className="text-sm text-muted-foreground">Maharishi Markandeshwar (Deemed to be University), Haryana</p>
+                        <p className="text-xs text-muted-foreground">CGPA: 7.95 / 10</p>
                     </div>
+                </CardContent>
+            </Card>
+             <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Cpu className="size-5 text-primary" /> Technical Expertise</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
                     <div>
-                        <p className="font-semibold">Expertise</p>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                            <Badge variant="secondary">AI/ML</Badge>
+                        <p className="font-semibold text-sm">Programming & Systems</p>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                            <Badge variant="secondary">C/C++</Badge>
+                            <Badge variant="secondary">Python</Badge>
+                            <Badge variant="secondary">Java</Badge>
+                            <Badge variant="secondary">JavaScript</Badge>
+                            <Badge variant="secondary">SQL</Badge>
+                            <Badge variant="secondary">React.js</Badge>
+                            <Badge variant="secondary">Node.js</Badge>
+                        </div>
+                    </div>
+                     <div>
+                        <p className="font-semibold text-sm">AI / ML & Data</p>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                            <Badge variant="secondary">Deep Learning</Badge>
                             <Badge variant="secondary">NLP</Badge>
-                            <Badge variant="secondary">Cloud Systems</Badge>
-                            <Badge variant="secondary">Exam Automation</Badge>
-                            <Badge variant="secondary">Full Stack Dev</Badge>
+                            <Badge variant="secondary">Computer Vision</Badge>
+                            <Badge variant="secondary">Pandas</Badge>
+                            <Badge variant="secondary">NumPy</Badge>
+                        </div>
+                    </div>
+                     <div>
+                        <p className="font-semibold text-sm">Tools & Platforms</p>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                            <Badge variant="secondary">Git</Badge>
+                            <Badge variant="secondary">Google Cloud</Badge>
+                            <Badge variant="secondary">Microservices</Badge>
                         </div>
                     </div>
                 </CardContent>
@@ -117,53 +168,93 @@ export default function FounderPage() {
             <div>
               <h2 className="font-headline text-3xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">About the Founder</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Deepak Kumar is a technology-driven education reformer, software engineer, and examination systems expert with over 4 years of strong experience in building scalable, secure, and AI-powered digital platforms. He is the Founder and Chief Exam Cell Officer of Indian Education Exam Cell (IEEC), India, a national-level examination technology initiative focused on automated, fair, and structured question paper generation for academic and government examinations. Deepak combines deep technical expertise with a clear understanding of India’s examination ecosystem, making IEEC a uniquely credible and future-ready platform.
+                Deepak Kumar is a software engineer, AI/ML practitioner, and examination systems innovator with over 4 years of strong professional and research experience in building large-scale, secure, and intelligent digital platforms. He is the Founder and Chief Exam Cell Officer of Indian Education Exam Cell (IEEC), India, a national-level examination technology initiative focused on automated question paper generation, evaluation logic, and academic standardization.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                Deepak uniquely combines deep technical expertise, government-grade examination exposure, and real-world experience of India’s most competitive selection systems, making IEEC a credible, policy-aware, and future-ready examination platform.
               </p>
             </div>
 
-            <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Trophy className="size-5 text-primary" /> Civil Services & Government Credentials</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                    {governmentCredentials.map((cred, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                            <CheckCircle2 className="size-5 text-green-600 mt-0.5 shrink-0" />
-                            <p className="text-muted-foreground">{cred}</p>
-                        </div>
-                    ))}
-                    <p className="text-sm text-muted-foreground pt-2">This experience directly shapes the government-format, policy-compliant design of IEEC’s question paper generation system.</p>
-                </CardContent>
-            </Card>
-
              <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Briefcase className="size-5 text-primary" /> Professional Experience</CardTitle>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Briefcase className="size-5 text-primary" /> Industry & Research Experience</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                    {professionalExperience.map((exp, index) => (
                        <div key={index}>
                            <p className="font-semibold">{exp.title} - <span className="font-normal text-accent">{exp.company}</span></p>
-                           <p className="text-sm text-muted-foreground">{exp.description}</p>
+                           <p className="text-sm text-muted-foreground italic">{exp.duration}</p>
+                           <p className="text-sm text-muted-foreground mt-1">{exp.description}</p>
                        </div>
                    ))}
-                   <p className="text-sm text-muted-foreground pt-2">This background ensures that IEEC is built with enterprise-grade reliability, audit readiness, and long-term scalability.</p>
+                </CardContent>
+            </Card>
+
+             <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Flag className="size-5 text-primary" /> Flagship Projects & Innovation</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                   {flagshipProjects.map((proj, index) => (
+                       <div key={index}>
+                           <p className="font-semibold">{proj.title}</p>
+                           <p className="text-sm text-muted-foreground">{proj.description}</p>
+                       </div>
+                   ))}
+                </CardContent>
+            </Card>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Trophy className="size-5 text-primary" /> Civil Services, Government & Defence Credentials</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div>
+                        <h4 className="font-semibold text-md mb-2">Civil Services & Government Selections</h4>
+                        {governmentCredentials.map((cred, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                                <CheckCircle2 className="size-5 text-green-600 mt-0.5 shrink-0" />
+                                <p className="text-muted-foreground">{cred}</p>
+                            </div>
+                        ))}
+                    </div>
+                     <div>
+                        <h4 className="font-semibold text-md mb-2">Defence Services (SSB Experience)</h4>
+                        {defenceCredentials.map((cred, index) => (
+                            <div key={index} className="flex items-start gap-3">
+                                <ShieldCheck className="size-5 text-blue-600 mt-0.5 shrink-0" />
+                                <p className="text-muted-foreground">{cred}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <p className="text-sm text-muted-foreground pt-2">These experiences gave him deep insight into examination fairness, evaluation depth, confidentiality, and national-level assessment standards—all of which directly shape IEEC.</p>
+                </CardContent>
+            </Card>
+            
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Award className="size-5 text-primary" /> Awards & Recognition</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                    {awards.map((award, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                            <Star className="size-4 text-yellow-500 mt-1 shrink-0" />
+                            <p className="text-muted-foreground text-sm">{award}</p>
+                        </div>
+                    ))}
                 </CardContent>
             </Card>
 
             <div>
-              <h2 className="font-headline text-2xl font-bold text-primary mb-2">Founder’s Vision Behind IEEC</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Deepak founded Indian Education Exam Cell (IEEC) to solve long-standing problems in India’s examination system like manual question paper setting, lack of cognitive balance, repetition and leakage risks, and non-uniform standards. Under his leadership, IEEC uses a strong AI algorithm based on Bloom’s Taxonomy and syllabus mapping to ensure immediate, balanced, and authority-specific question papers with centralized control.
+              <h2 className="font-headline text-2xl font-bold text-primary mb-2">Founder’s Vision & Role at IEEC</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                IEEC was founded to eliminate manual paper setting errors, repetition and leakage risks, cognitive imbalance in exams, and non-uniform standards. It replaces them with AI-driven, government-format structured papers for immediate, reliable, and fair assessments.
               </p>
-            </div>
-
-            <div>
-                <h2 className="font-headline text-2xl font-bold text-primary mb-2">Role at IEEC</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                    As Chief Exam Cell Officer, Deepak Kumar has sole authorization for final question paper generation, monitors all registered institutions, ensures confidentiality and compliance, oversees AI algorithm integrity, and maintains the centralized national exam cell dashboard.
+                    As Chief Exam Cell Officer, Deepak Kumar has exclusive authorization for question paper generation, monitors all registered institutions, and ensures syllabus mapping, marks-wise distribution, Bloom’s Taxonomy cognitive balance, and authority-specific formats, while maintaining a centralized national exam cell dashboard and overseeing confidentiality, auditability, and quality control.
                 </p>
             </div>
+
           </div>
         </div>
       </main>
