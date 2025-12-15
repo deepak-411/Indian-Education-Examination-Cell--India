@@ -26,17 +26,17 @@ const featureCards = [
 
 const missionVisionAim = [
     {
-      icon: <Target className="h-12 w-12 text-primary" />,
+      icon: <Target className="size-12 text-primary" />,
       title: "Our Aim",
       description: "To empower educators by providing an intelligent, streamlined, and reliable tool for instant question paper generation, simplifying the examination process across India.",
     },
     {
-      icon: <Eye className="h-12 w-12 text-primary" />,
+      icon: <Eye className="size-12 text-primary" />,
       title: "Our Vision",
       description: "To be the cornerstone of educational assessment in India, fostering a fair and effective evaluation system through the seamless integration of technology and pedagogy.",
     },
     {
-      icon: <Trophy className="h-12 w-12 text-primary" />,
+      icon: <Trophy className="size-12 text-primary" />,
       title: "Our Mission",
       description: "To revolutionize exam preparation by equipping educational institutions with an AI-driven platform that upholds the highest standards of academic integrity and excellence.",
     },
@@ -49,7 +49,18 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+          <div className="flex items-center gap-3 invisible">
+            <Logo className="size-12" />
+            <div className="flex flex-col">
+              <span className="font-headline text-lg font-bold leading-tight text-primary">
+                Indian Education
+              </span>
+              <span className="font-headline text-lg font-bold leading-tight text-primary">
+                Exam Cell
+              </span>
+            </div>
+          </div>
+          <Link href="/" className="flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
             <Logo className="size-12" />
             <div className="flex flex-col">
               <span className="font-headline text-lg font-bold leading-tight text-primary">
