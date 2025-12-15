@@ -9,14 +9,8 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
       {...props}
       className={cn(props.className)}
     >
-      <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{ stopColor: "rgb(255,153,51)", stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: "rgb(34,139,34)", stopOpacity: 1 }} />
-        </linearGradient>
-      </defs>
       <path
-        fill="url(#grad1)"
+        fill="hsl(var(--primary))"
         d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"
       />
       <path
