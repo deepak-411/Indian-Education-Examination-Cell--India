@@ -1,3 +1,10 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "An abstract pattern of interconnected nodes and lines, representing AI and networks.",
+      "imageUrl": "https://images.unsplash.com/photo-1738082956233-b8f1803411d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMG5ldHdvcmt8ZW58MHx8fHwxNzY1NzAxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract network"
+    }
+  ]
 }
