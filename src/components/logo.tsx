@@ -8,7 +8,7 @@ export function Logo({ className }: { className?: string }) {
       alt="Indian Education Exam Cell Logo"
       width={256}
       height={256}
-      className={cn(className)}
+      className={cn("invert-0 dark:invert", className)}
       unoptimized
     />
   );
