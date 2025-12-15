@@ -10,7 +10,9 @@ export function DashboardHeader() {
       <div className="flex-1 flex justify-center">
         <Link href="/" className="flex items-center gap-2">
           <Logo className="size-8" />
-          <span className="font-headline text-xl font-bold hidden sm:inline-block">IEEC</span>
+           <span className="font-headline text-xl font-bold hidden sm:inline-block text-primary">
+                IEEC
+            </span>
         </Link>
       </div>
       <div className="relative ml-auto flex-none md:grow-0">
