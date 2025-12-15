@@ -150,12 +150,18 @@ export default function Home() {
       </main>
 
       <footer className="border-t bg-primary text-primary-foreground">
-        <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-2">
             <Logo className="size-8" />
             <p className="text-sm font-semibold font-headline">Indian Education Exam Cell</p>
           </div>
-          <p className="text-sm text-primary-foreground/80">
+          <div className="text-center md:text-left text-sm text-primary-foreground/80">
+            <p className="font-semibold text-primary-foreground mb-1">Contact Us</p>
+            <p>Deepak Kumar</p>
+            <p>dk3624897@gmail.com</p>
+            <p>Pimpoli Village, Near Barvi Dam, Badlapur, Mumbai, Maharashtra</p>
+          </div>
+          <p className="text-sm text-primary-foreground/80 text-center md:text-right">
             © {new Date().getFullYear()} IEEC, India. All rights reserved.
           </p>
         </div>
