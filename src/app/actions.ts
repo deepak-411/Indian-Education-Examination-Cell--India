@@ -28,17 +28,18 @@ export async function loginAction(prevState: any, formData: FormData) {
   // In a real app, you'd verify credentials against a database
   // and set a session cookie. Here, we'll simulate it.
   if (email === 'dk3624897@gmail.com' && password === 'IEEC2026') {
-    // This would typically involve setting a secure, httpOnly cookie
-  } else {
-    // For any other valid login, redirect to standard dashboard
+    redirect('/dashboard/admin');
+  } 
+  
+  // This is a simulated login for any other registered user
+  // In a real application, you would check this against a database.
+  if (password === 'password123') {
+     redirect('/dashboard');
   }
 
-  // Redirect after "successful" login
-  if (email === 'dk3624897@gmail.com') {
-    redirect('/dashboard/admin');
-  } else {
-    redirect('/dashboard');
-  }
+  return {
+    error: 'Invalid credentials. Please try again.',
+  };
 }
 
 const registerSchema = z.object({
@@ -87,7 +88,7 @@ export async function generateQuestionPaperAction(
       className: rawData.className as string,
       totalMarks: rawData.totalMarks,
       syllabus: rawData.syllabus as string,
-      notes: rawaData.notes as string,
+      notes: rawData.notes as string,
     });
     
     // TODO: Save the generated paper to the database and associate with the request.

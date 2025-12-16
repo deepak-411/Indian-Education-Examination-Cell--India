@@ -5,19 +5,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { PlusCircle } from "lucide-react";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="font-headline text-2xl font-bold">Organization Dashboard</h1>
+            <p className="text-muted-foreground">Welcome back, Delhi Public School.</p>
+          </div>
+          <Button>
+            <PlusCircle className="mr-2"/>
+            Request New Paper
+          </Button>
+        </div>
+
         <Card>
           <CardHeader>
-            <CardTitle className="font-headline">Organization Dashboard</CardTitle>
+            <CardTitle>My Question Paper Requests</CardTitle>
             <CardDescription>
-              Welcome to your dashboard. Manage your question papers and requests here.
+              Track the status of your submitted requests for question papers.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p>This is the dashboard for registered organizations. Functionality to request new papers and view existing ones will be built out here.</p>
+            <p className="text-sm text-center text-muted-foreground py-8">
+              You haven&apos;t made any requests yet.
+            </p>
           </CardContent>
         </Card>
     </div>

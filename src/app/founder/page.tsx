@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Star, ShieldCheck, Award, Flag, Cpu, CheckCircle2, Target, Eye } from 'lucide-react';
@@ -201,7 +200,7 @@ export default function FounderPage() {
                 <CardHeader>
                     <CardTitle className="font-headline text-lg flex items-center gap-2"><Flag className="size-5 text-primary" /> Vision: Solving Core Examination Challenges</CardTitle>
                 </CardHeader>
-                <CardContent className="grid grid-cols-2 gap-6">
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <h4 className="font-semibold mb-2 text-destructive">Problems to Eliminate</h4>
                         <ul className='list-disc list-inside text-muted-foreground space-y-1'>
