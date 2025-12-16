@@ -37,12 +37,12 @@ export default function RegisterPage() {
   }, [state, toast]);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
-        <CardDescription>Join our platform to streamline your examination process.</CardDescription>
-      </CardHeader>
-      <form action={formAction}>
+    <form action={formAction}>
+      <Card>
+        <CardHeader>
+          <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
+          <CardDescription>Join our platform to streamline your examination process.</CardDescription>
+        </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="organizationName">Organization Name</Label>
@@ -80,7 +80,7 @@ export default function RegisterPage() {
             </Link>
           </p>
         </CardFooter>
-      </form>
-    </Card>
+      </Card>
+    </form>
   );
 }

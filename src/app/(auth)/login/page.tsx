@@ -36,12 +36,12 @@ export default function LoginPage() {
   }, [state, toast]);
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="font-headline text-2xl">Login</CardTitle>
-        <CardDescription>Enter your credentials to access your dashboard.</CardDescription>
-      </CardHeader>
-      <form action={formAction}>
+    <form action={formAction}>
+      <Card>
+        <CardHeader>
+          <CardTitle className="font-headline text-2xl">Login</CardTitle>
+          <CardDescription>Enter your credentials to access your dashboard.</CardDescription>
+        </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
@@ -61,7 +61,7 @@ export default function LoginPage() {
             </Link>
           </p>
         </CardFooter>
-      </form>
-    </Card>
+      </Card>
+    </form>
   );
 }
