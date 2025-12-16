@@ -268,7 +268,7 @@ export default function FounderPage() {
                      <ul className='list-disc list-inside text-muted-foreground space-y-1'>
                         {ieecSolution.map((item, index) => (<li key={index}>{item}</li>))}
                     </ul>
-                </I</CardContent>
+                </CardContent>
             </Card>
 
           </div>
