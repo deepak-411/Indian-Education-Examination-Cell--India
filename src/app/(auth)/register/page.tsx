@@ -38,66 +38,66 @@ export default function RegisterPage() {
     }
   }, [state, toast]);
   
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = (formData: FormData) => {
     if (password !== confirmPassword) {
-      event.preventDefault();
       toast({
         title: 'Password Mismatch',
         description: 'The passwords you entered do not match.',
         variant: 'destructive',
       });
+      // Prevent form submission by not calling the action
+      return;
     }
+    formAction(formData);
   };
 
   return (
-    <form action={formAction} onSubmit={handleFormSubmit}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
-          <CardDescription>Join our platform to streamline your examination process.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="organizationName">Organization Name</Label>
-            <Input id="organizationName" name="organizationName" placeholder="e.g., Delhi Public School" required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="organizationType">Organization Type</Label>
-            <Select name="organizationType" required>
-              <SelectTrigger id="organizationType">
-                <SelectValue placeholder="Select a type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="school">School</SelectItem>
-                <SelectItem value="college">College</SelectItem>
-                <SelectItem value="university">University</SelectItem>
-                <SelectItem value="government_body">Government Body</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Official Email</Label>
-            <Input id="email" name="email" type="email" placeholder="contact@yourschool.edu" required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" name="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-          </div>
-           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">Confirm Password</Label>
-            <Input id="confirmPassword" name="confirmPassword" type="password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-col gap-4">
-          <SubmitButton />
-          <p className="text-sm text-center text-muted-foreground">
-            Already have an account?{' '}
-            <Link href="/login" className="font-medium text-primary hover:underline">
-              Login
-            </Link>
-          </p>
-        </CardFooter>
-      </Card>
-    </form>
+    <Card as="form" action={handleFormSubmit}>
+      <CardHeader>
+        <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
+        <CardDescription>Join our platform to streamline your examination process.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="organizationName">Organization Name</Label>
+          <Input id="organizationName" name="organizationName" placeholder="e.g., Delhi Public School" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="organizationType">Organization Type</Label>
+          <Select name="organizationType" required>
+            <SelectTrigger id="organizationType">
+              <SelectValue placeholder="Select a type" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="school">School</SelectItem>
+              <SelectItem value="college">College</SelectItem>
+              <SelectItem value="university">University</SelectItem>
+              <SelectItem value="government_body">Government Body</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="email">Official Email</Label>
+          <Input id="email" name="email" type="email" placeholder="contact@yourschool.edu" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <Input id="password" name="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+         <div className="space-y-2">
+          <Label htmlFor="confirmPassword">Confirm Password</Label>
+          <Input id="confirmPassword" name="confirmPassword" type="password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+        </div>
+      </CardContent>
+      <CardFooter className="flex flex-col gap-4">
+        <SubmitButton />
+        <p className="text-sm text-center text-muted-foreground">
+          Already have an account?{' '}
+          <Link href="/login" className="font-medium text-primary hover:underline">
+            Login
+          </Link>
+        </p>
+      </CardFooter>
+    </Card>
   );
 }

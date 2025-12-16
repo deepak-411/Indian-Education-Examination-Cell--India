@@ -36,32 +36,30 @@ export default function LoginPage() {
   }, [state, toast]);
 
   return (
-    <form action={formAction}>
-      <Card>
-        <CardHeader>
-          <CardTitle className="font-headline text-2xl">Login</CardTitle>
-          <CardDescription>Enter your credentials to access your dashboard.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" placeholder="principal@school.com" required />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" name="password" type="password" required />
-          </div>
-        </CardContent>
-        <CardFooter className="flex flex-col gap-4">
-          <SubmitButton />
-          <p className="text-sm text-center text-muted-foreground">
-            Don&apos;t have an account?{' '}
-            <Link href="/register" className="font-medium text-primary hover:underline">
-              Register
-            </Link>
-          </p>
-        </CardFooter>
-      </Card>
-    </form>
+    <Card as="form" action={formAction}>
+      <CardHeader>
+        <CardTitle className="font-headline text-2xl">Login</CardTitle>
+        <CardDescription>Enter your credentials to access your dashboard.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" name="email" type="email" placeholder="principal@school.com" required />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <Input id="password" name="password" type="password" required />
+        </div>
+      </CardContent>
+      <CardFooter className="flex flex-col gap-4">
+        <SubmitButton />
+        <p className="text-sm text-center text-muted-foreground">
+          Don&apos;t have an account?{' '}
+          <Link href="/register" className="font-medium text-primary hover:underline">
+            Register
+          </Link>
+        </p>
+      </CardFooter>
+    </Card>
   );
 }
