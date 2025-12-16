@@ -22,7 +22,7 @@ const GenerateQuestionPaperInputSchema = z.object({
 export type GenerateQuestionPaperInput = z.infer<typeof GenerateQuestionPaperInputSchema>;
 
 const GenerateQuestionPaperOutputSchema = z.object({
-  questionPaper: z.string().describe('The generated question paper in a government-approved format (e.g., CBSE).'),
+  questionPaper: z.string().describe('The generated question paper in a government-approved format (e.g., CBSE), formatted as Markdown.'),
 });
 
 export type GenerateQuestionPaperOutput = z.infer<typeof GenerateQuestionPaperOutputSchema>;
@@ -37,9 +37,14 @@ const generateQuestionPaperPrompt = ai.definePrompt({
   output: {schema: GenerateQuestionPaperOutputSchema},
   prompt: `You are an expert in generating question papers for Indian educational institutions, including schools, colleges, universities, and government bodies.
 
-You will use the provided syllabus, notes, and organization type to generate a well-structured question paper with questions that align with Bloom's Taxonomy.
+Your task is to generate a well-structured question paper based on the provided details. The output must be in Markdown format.
 
-Ensure the question paper adheres to government-approved formats like CBSE, considering the organization type and authority.
+Key instructions:
+1.  **Structure:** Create clear sections (e.g., Section A, Section B).
+2.  **Question Types:** Include a mix of Multiple Choice Questions (MCQs), Short Answer, and Long Answer questions.
+3.  **Bloom's Taxonomy:** Ensure questions cover different cognitive levels (Remembering, Understanding, Applying, Analyzing, Evaluating, Creating).
+4.  **Formatting:** Use Markdown for all formatting. Use headings for sections, bold for question numbers, and bullet points for options in MCQs.
+5.  **Adherence:** Strictly follow the syllabus, notes, total marks, and organization type provided.
 
 Organization Type: {{{organizationType}}}
 Class: {{{className}}}
@@ -47,8 +52,8 @@ Total Marks: {{{totalMarks}}}
 Syllabus: {{{syllabus}}}
 Notes: {{{notes}}}
 
-Generate the question paper:
-`, // add more to the prompt here
+Generate the Markdown-formatted question paper now.
+`,
 });
 
 const generateQuestionPaperFlow = ai.defineFlow(

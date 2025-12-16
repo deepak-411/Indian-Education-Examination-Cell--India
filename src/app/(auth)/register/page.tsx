@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import { useState } from 'react';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -24,6 +25,8 @@ function SubmitButton() {
 
 export default function RegisterPage() {
   const [state, formAction] = useActionState(registerAction, { error: null });
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const { toast } = useToast();
 
   useEffect(() => {
@@ -35,9 +38,20 @@ export default function RegisterPage() {
       });
     }
   }, [state, toast]);
+  
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    if (password !== confirmPassword) {
+      event.preventDefault();
+      toast({
+        title: 'Password Mismatch',
+        description: 'The passwords you entered do not match.',
+        variant: 'destructive',
+      });
+    }
+  };
 
   return (
-    <form action={formAction}>
+    <form action={formAction} onSubmit={handleFormSubmit}>
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
@@ -68,7 +82,11 @@ export default function RegisterPage() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" name="password" type="password" required />
+            <Input id="password" name="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+           <div className="space-y-2">
+            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Input id="confirmPassword" name="confirmPassword" type="password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
           </div>
         </CardContent>
         <CardFooter className="flex flex-col gap-4">

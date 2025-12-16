@@ -28,13 +28,6 @@ const awards = [
     "100+ recognitions in innovation, coding, and research",
 ];
 
-const founderRole = [
-    "Syllabus-mapped papers",
-    "Marks-wise distribution",
-    "Bloom’s Taxonomy cognitive balance",
-    "Authority-specific formats"
-];
-
 const ieecVision = [
     "Manual paper setting errors",
     "Repetition and leakage risks",
@@ -85,13 +78,13 @@ export default function FounderPage() {
       </header>
 
       <main className="container py-12 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Left Column - Profile Picture and Basic Info */}
-          <div className="md:col-span-1 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+          
+          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
             <Card>
               <CardContent className="p-6 flex flex-col items-center text-center">
                 {founderImage && (
-                    <div className="relative size-48 mb-4">
+                    <div className="relative size-40 mb-4">
                         <Image
                             src={founderImage.imageUrl}
                             alt="Deepak Kumar"
@@ -104,34 +97,18 @@ export default function FounderPage() {
                 )}
                 <h1 className="font-headline text-2xl font-bold text-primary">Deepak Kumar</h1>
                 <p className="text-sm font-medium text-accent">Founder & Chief Exam Cell Officer (CECO)</p>
-                <p className="text-sm text-muted-foreground mt-1">Indian Education Exam Cell (IEEC), India</p>
+                <p className="text-xs text-muted-foreground mt-1">Indian Education Exam Cell (IEEC), India</p>
               </CardContent>
             </Card>
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><GraduationCap className="size-5 text-primary" /> Educational Qualifications</CardTitle>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><GraduationCap className="size-5 text-primary" /> Education</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-2">
+                <CardContent>
                      <div>
-                        <p className="font-semibold">Bachelor of Technology (B.Tech) in Computer Science & Engineering</p>
+                        <p className="font-semibold">B.Tech, Computer Science & Engineering</p>
                         <p className="text-sm text-muted-foreground">Maharishi Markandeshwar (Deemed to be University), Haryana</p>
                     </div>
-                </CardContent>
-            </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Cpu className="size-5 text-primary" /> Academic & Professional Strength</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2 text-sm text-muted-foreground">
-                    <p className='font-semibold text-foreground'>Software Engineer | Full-Stack & AI Systems</p>
-                    <p>Strong background in:</p>
-                    <ul className='list-disc list-inside space-y-1'>
-                        <li>Examination automation systems</li>
-                        <li>Question paper generation & evaluation logic</li>
-                        <li>AI-based academic assessment models</li>
-                        <li>Secure role-based authority dashboards</li>
-                    </ul>
-                    <p className='pt-2'>Deepak’s work focuses on removing manual dependency from examinations and replacing it with algorithm-driven, syllabus-mapped, cognition-balanced question papers.</p>
                 </CardContent>
             </Card>
             <Card>
@@ -149,21 +126,24 @@ export default function FounderPage() {
             </Card>
           </div>
 
-          {/* Right Column - Detailed Information */}
-          <div className="md:col-span-2 space-y-8">
-            <div>
-              <h2 className="font-headline text-3xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Brief Professional Summary</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Deepak Kumar is a Software Engineer and Examination Systems Specialist with over four years of professional and research experience in software development, artificial intelligence, and automated assessment systems. He is the Founder and Chief Exam Cell Officer of Indian Education Exam Cell (IEEC), India, an examination technology platform designed for structured, syllabus-based, and standardized question paper generation for academic and government examinations.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mt-4">
-                His professional background combines technical expertise, experience in high-security environments, and direct exposure to national-level competitive examinations, making him suitably qualified to lead an examination-oriented technology organization.
-              </p>
-            </div>
+          <div className="lg:col-span-2 space-y-8">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl text-primary">Brief Professional Summary</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                        Deepak Kumar is a Software Engineer and Examination Systems Specialist with over four years of professional and research experience in software development, artificial intelligence, and automated assessment systems. He is the Founder and Chief Exam Cell Officer of Indian Education Exam Cell (IEEC), India, an examination technology platform designed for structured, syllabus-based, and standardized question paper generation for academic and government examinations.
+                    </p>
+                    <p>
+                        His professional background combines technical expertise, experience in high-security environments, and direct exposure to national-level competitive examinations, making him suitably qualified to lead an examination-oriented technology organization.
+                    </p>
+                </CardContent>
+            </Card>
 
              <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><ShieldCheck className="size-5 text-primary" /> Civil Services & Defence Examination Credentials</CardTitle>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><ShieldCheck className="size-5 text-primary" /> Civil Services & Defence Credentials</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div>
@@ -189,85 +169,51 @@ export default function FounderPage() {
                             </div>
                         ))}
                     </div>
-                    <p className="text-sm text-muted-foreground pt-2 italic">These experiences provide Deepak with first-hand understanding of examination fairness, evaluation depth, confidentiality, and national-level assessment standards, which directly shape the IEEC platform.</p>
+                    <p className="text-sm text-muted-foreground pt-2 italic border-t mt-4 pt-4">This first-hand experience with high-stakes national examinations directly informs the fairness, integrity, and policy-aware design of the IEEC platform.</p>
                 </CardContent>
             </Card>
             
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Briefcase className="size-5 text-primary" /> Founder’s Role at IEEC</CardTitle>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Briefcase className="size-5 text-primary" /> Founder’s Role & Philosophy</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                    <p className='text-muted-foreground'>As Chief Exam Cell Officer, Deepak Kumar:</p>
-                    <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        <li>Holds sole authorization for final question paper generation</li>
-                        <li>Supervises all registered schools, colleges, universities, and government bodies</li>
-                        <li>Maintains a centralized national exam cell dashboard</li>
-                        <li>Controls exam confidentiality and quality assurance</li>
-                    </ul>
-                     <p className='font-semibold pt-2'>Ensures:</p>
-                     <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        <li>Authority-wise question generation</li>
-                        <li>Syllabus-driven paper design</li>
-                        <li>Marks-based structuring</li>
-                        <li>Government-style formats (CBSE/NTA-like)</li>
-                    </ul>
+                <CardContent className="space-y-4 text-muted-foreground">
+                    <div>
+                        <h4 className="font-semibold mb-2">As Chief Exam Cell Officer, Deepak Kumar:</h4>
+                        <ul className='list-disc list-inside space-y-1'>
+                            <li>Holds sole authorization for final question paper generation.</li>
+                            <li>Supervises all registered organizations and maintains a centralized national dashboard.</li>
+                            <li>Controls exam confidentiality, quality assurance, and AI algorithm integrity.</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4 className="font-semibold mb-2">The IEEC platform is built on a philosophy of:</h4>
+                         <ul className='list-disc list-inside space-y-1'>
+                            <li><span className="font-medium text-foreground">Cognitive Balance:</span> Using Bloom’s Taxonomy for a mix of LOTS & HOTS questions.</li>
+                            <li><span className="font-medium text-foreground">Standardization:</span> Authority-specific, syllabus-driven, and marks-based structuring.</li>
+                            <li><span className="font-medium text-foreground">Automation:</span> Immediate, error-free paper creation in official formats (CBSE/NTA-like).</li>
+                        </ul>
+                    </div>
                 </CardContent>
             </Card>
-
+            
             <Card>
                 <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Target className="size-5 text-primary" /> Examination Technology Philosophy</CardTitle>
+                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Flag className="size-5 text-primary" /> Vision: Solving Core Examination Challenges</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
-                    <p className='text-muted-foreground'>The IEEC platform, under Deepak’s leadership, is built on:</p>
-                     <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        <li>Bloom’s Taxonomy-based cognitive balance</li>
-                        <li>Automated syllabus mapping</li>
-                        <li>Marks-wise question distribution</li>
-                        <li>Institution-specific exam generation</li>
-                        <li>Immediate, error-free paper creation</li>
-                        <li>Structured academic & government formats</li>
-                    </ul>
-                    <p className='text-muted-foreground pt-2'>This ensures valid, reliable, and standardized assessments for:</p>
-                    <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        <li>Classes 1–12</li>
-                        <li>Graduation & Post-Graduation</li>
-                        <li>B.Tech / M.Tech (all branches)</li>
-                        <li>Government examinations</li>
-                    </ul>
-                </CardContent>
-            </Card>
-
-             <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Eye className="size-5 text-primary" /> Why IEEC is Different</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                    <p className="text-muted-foreground">Unlike traditional exam software, IEEC is designed by someone who has:</p>
-                     <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        <li>Written high-stakes exams</li>
-                        <li>Cleared SSB interviews</li>
-                        <li>Qualified UPSC Mains</li>
-                        <li>Worked in technical government selections</li>
-                    </ul>
-                    <p className="font-semibold text-foreground pt-2">This makes IEEC practically informed, policy-aware, and examination-centric, not just software-centric.</p>
-                </CardContent>
-            </Card>
-
-            <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Flag className="size-5 text-primary" /> Vision Behind IEEC</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                    <p className="text-muted-foreground">IEEC was founded to eliminate:</p>
-                     <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        {ieecVision.map((item, index) => (<li key={index}>{item}</li>))}
-                    </ul>
-                    <p className="text-muted-foreground pt-2">And replace them with:</p>
-                     <ul className='list-disc list-inside text-muted-foreground space-y-1'>
-                        {ieecSolution.map((item, index) => (<li key={index}>{item}</li>))}
-                    </ul>
+                <CardContent className="grid grid-cols-2 gap-6">
+                    <div>
+                        <h4 className="font-semibold mb-2 text-destructive">Problems to Eliminate</h4>
+                        <ul className='list-disc list-inside text-muted-foreground space-y-1'>
+                            {ieecVision.map((item, index) => (<li key={index}>{item}</li>))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-semibold mb-2 text-accent">Solutions Provided</h4>
+                        <ul className='list-disc list-inside text-muted-foreground space-y-1'>
+                            {ieecSolution.map((item, index) => (<li key={index}>{item}</li>))}
+                        </ul>
+                    </div>
                 </CardContent>
             </Card>
 
