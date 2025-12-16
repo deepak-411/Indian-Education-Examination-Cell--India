@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 import {
   Dialog,
   DialogContent,
@@ -13,7 +14,6 @@ import {
 import { Button } from "@/components/ui/button";
 import type { QuestionPaperRequest } from "@/lib/types";
 import { generateQuestionPaperAction, summarizeAction } from '@/app/actions';
-import { useEffect, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Loader2, Sparkles } from 'lucide-react';
@@ -43,8 +43,8 @@ export function GeneratePaperDialog({ request }: { request: QuestionPaperRequest
   const [open, setOpen] = useState(false);
   const { toast } = useToast();
 
-  const [generationState, generationAction] = useFormState(generateQuestionPaperAction, { data: null, error: null });
-  const [summaryState, summaryAction] = useFormState(summarizeAction, { data: null, error: null });
+  const [generationState, generationAction] = useActionState(generateQuestionPaperAction, { data: null, error: null });
+  const [summaryState, summaryAction] = useActionState(summarizeAction, { data: null, error: null });
   
   useEffect(() => {
     if (generationState.error) {
@@ -57,6 +57,7 @@ export function GeneratePaperDialog({ request }: { request: QuestionPaperRequest
 
   const handleOpenChange = (isOpen: boolean) => {
     if (!isOpen) {
+      // Reset state when dialog closes
       generationState.data = null;
       generationState.error = null;
       summaryState.data = null;
@@ -128,7 +129,7 @@ export function GeneratePaperDialog({ request }: { request: QuestionPaperRequest
                 <form action={generationAction}>
                     <input type="hidden" name="organizationType" value={request.organizationType} />
                     <input type="hidden" name="className" value={request.className} />
-                    <input type="hidden" name="totalMarks" value={request.totalMarks} />
+                    <input type="hidden" name="totalMarks" value={request.totalMarks.toString()} />
                     <input type="hidden" name="syllabus" value={request.syllabus} />
                     <input type="hidden" name="notes" value={request.notes} />
                     <GenerateButton />
