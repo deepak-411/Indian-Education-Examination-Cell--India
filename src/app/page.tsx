@@ -1,44 +1,49 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, BookOpen, BrainCircuit, FileCheck, Target, Eye, Trophy, ShieldCheck, LockKeyhole, Server } from 'lucide-react';
+import { ArrowRight, BookOpen, BrainCircuit, FileCheck, Target, Eye, Trophy, ShieldCheck, LockKeyhole, Server, Users, FileText, Bot } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { HeroCarousel } from './hero-carousel';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const featureCards = [
   {
-    icon: <BookOpen className="size-8 text-primary" />,
-    title: 'Comprehensive Exam Support',
-    description: 'From K-12 and university exams to specialized government tests, our platform caters to all educational levels and formats.',
+    icon: <Users className="size-8 text-primary" />,
+    title: 'For All Institutions',
+    description: 'Catering to Schools (K-12), Universities (UG/PG), and Government Bodies for all academic and competitive examination needs.',
   },
   {
     icon: <BrainCircuit className="size-8 text-primary" />,
-    title: 'AI-Powered Generation',
-    description: 'Leverage our advanced AI, grounded in Bloom\'s Taxonomy, to create cognitively balanced and effective question papers instantly.',
+    title: 'Cognitive Balance',
+    description: 'Our AI is grounded in Bloom\'s Taxonomy, ensuring a balanced mix of questions that test memory, application, and critical thinking.',
   },
   {
     icon: <FileCheck className="size-8 text-primary" />,
     title: 'Standardized Formatting',
-    description: 'Generate question papers in government-approved formats (e.g., CBSE, NTA), ensuring compliance and professionalism.',
+    description: 'Automatically generate papers in government-approved formats (e.g., CBSE, NTA), ensuring full compliance and a professional layout.',
   },
 ];
 
-const missionVisionAim = [
+const frameworkItems = [
     {
-      icon: <Target className="size-12 text-primary" />,
-      title: "Our Aim",
-      description: "To empower educators by providing an intelligent, streamlined, and reliable tool for instant question paper generation, simplifying the examination process across India.",
+      value: "aim",
+      icon: <Target className="size-8 text-accent" />,
+      title: "Our Aim: To Eradicate Examination Malpractice",
+      description: "Our primary objective is to build a zero-vulnerability framework that permanently eliminates the risks of paper leaks and unauthorized access. We aim to restore integrity and trust in the examination process by making it transparent, secure, and immune to external interference.",
     },
     {
-      icon: <Eye className="size-12 text-primary" />,
-      title: "Our Vision",
-      description: "To be the cornerstone of educational assessment in India, fostering a fair, transparent, and effective evaluation system through the seamless integration of technology and pedagogy.",
+      value: "vision",
+      icon: <Eye className="size-8 text-accent" />,
+      title: "Our Vision: A National Standard for Assessment",
+      description: "We envision a future where every educational and governmental institution in India relies on a single, unified platform for fair and effective assessment. Our goal is to become the cornerstone of educational evaluation, fostering a level playing field for every student through cutting-edge technology.",
     },
     {
-      icon: <Trophy className="size-12 text-primary" />,
-      title: "Our Mission",
-      description: "To revolutionize exam preparation by equipping educational institutions with an AI-driven platform that upholds the highest standards of academic integrity, security, and excellence.",
+      value: "mission",
+      icon: <Trophy className="size-8 text-accent" />,
+      title: "Our Mission: Revolutionizing Exam Creation & Delivery",
+      description: "Our mission is to empower educators and administrators by equipping them with an AI-driven platform that upholds the highest standards of academic integrity. We are committed to revolutionizing both the creation of examination content and its secure delivery, whether online or offline.",
     },
 ];
 
@@ -128,60 +133,66 @@ export default function Home() {
             <div className="text-center">
               <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">A Framework for Trust and Excellence</h2>
               <p className="mt-2 text-muted-foreground max-w-3xl mx-auto">
-                The Indian Education Exam Cell (IEEC) provides a comprehensive solution. Our software is an end-to-end ecosystem designed to eliminate vulnerabilities and automate the examination lifecycle with unparalleled privacy and efficiency.
+                The Indian Education Exam Cell (IEEC) provides an end-to-end ecosystem designed to eliminate vulnerabilities and automate the examination lifecycle with unparalleled privacy, efficiency, and integrity.
               </p>
             </div>
 
-            <div className="bg-primary/5 rounded-lg p-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-               {missionVisionAim.map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="flex justify-center mb-4">{item.icon}</div>
-                  <h3 className="font-headline text-2xl font-semibold mb-2 text-primary">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-              ))}
+            <div className="max-w-4xl mx-auto">
+                <Accordion type="single" collapsible defaultValue="aim" className="w-full">
+                    {frameworkItems.map((item) => (
+                        <AccordionItem value={item.value} key={item.value}>
+                            <AccordionTrigger className="font-headline text-xl hover:no-underline">
+                                <div className="flex items-center gap-4">
+                                    {item.icon}
+                                    <span>{item.title}</span>
+                                </div>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-base text-muted-foreground pl-12">
+                                {item.description}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
             </div>
+            
+            <div>
+              <div className="text-center mb-12">
+                <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">What We Offer</h2>
+                <p className="mt-2 text-muted-foreground max-w-3xl mx-auto">
+                  Our dual-mode platform provides comprehensive solutions for both online and offline examination requirements.
+                </p>
+              </div>
 
-             <div>
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Launching Soon: The Future of Online Examinations</h2>
-                    <p className="mt-2 text-muted-foreground max-w-3xl mx-auto">
-                        Beyond paper generation, IEEC is developing a fully integrated online examination portal, authorized and overseen by the Chief Exam Cell Officer (CECO).
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <Card className="p-6">
-                        <CardHeader className="p-0 mb-4 flex-row items-center gap-4">
-                            <LockKeyhole className="size-10 text-primary" />
-                            <CardTitle className="font-headline text-xl">Full Proctoring & Security</CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-0 text-muted-foreground text-sm space-y-2">
-                           <p>Mandatory full-screen mode to ensure candidate focus.</p>
-                           <p>Tab-switching triggers auto-submission, preventing unauthorized access to external resources.</p>
-                           <p>Advanced AI proctoring to detect suspicious activities, including the use of tools like Google Lens.</p>
-                        </CardContent>
-                    </Card>
-                     <Card className="p-6">
-                        <CardHeader className="p-0 mb-4 flex-row items-center gap-4">
-                            <ShieldCheck className="size-10 text-primary" />
-                            <CardTitle className="font-headline text-xl">Controlled Environment</CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-0 text-muted-foreground text-sm space-y-2">
-                           <p>Once submitted or auto-submitted, re-entry is blocked to maintain exam integrity and prevent cheating.</p>
-                           <p>The CECO holds the authority to switch between online and offline modes based on security and logistical needs.</p>
-                        </CardContent>
-                    </Card>
-                     <Card className="p-6">
-                        <CardHeader className="p-0 mb-4 flex-row items-center gap-4">
-                            <Server className="size-10 text-primary" />
-                            <CardTitle className="font-headline text-xl">Seamless Scheduling & Delivery</CardTitle>
-                        </CardHeader>
-                        <CardContent className="p-0 text-muted-foreground text-sm space-y-2">
-                           <p>Schedule exams for any institution: Schools (Classes 1-12), Colleges (UG/PG), and Government Bodies.</p>
-                        </CardContent>
-                    </Card>
-                </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <Card className="p-6 md:p-8">
+                  <CardHeader className="p-0 mb-4 flex-row items-center gap-4">
+                      <Server className="size-10 text-primary" />
+                      <CardTitle className="font-headline text-2xl">Secure Online Examination Portal</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 text-muted-foreground space-y-3">
+                     <p>Conduct tamper-proof online examinations through our fully-managed portal, overseen by the Chief Exam Cell Officer (CECO).</p>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li><span className="font-semibold text-foreground">Advanced Proctoring:</span> AI-powered monitoring detects suspicious activities, including use of tools like Google Lens.</li>
+                        <li><span className="font-semibold text-foreground">Controlled Environment:</span> Features mandatory full-screen mode and auto-submission on tab-switching to prevent cheating.</li>
+                        <li><span className="font-semibold text-foreground">Flexible Scheduling:</span> The CECO can schedule and deploy exams for any registered institution, from K-12 schools to government bodies.</li>
+                      </ul>
+                  </CardContent>
+                </Card>
+                 <Card className="p-6 md:p-8">
+                  <CardHeader className="p-0 mb-4 flex-row items-center gap-4">
+                      <Bot className="size-10 text-primary" />
+                      <CardTitle className="font-headline text-2xl">AI-Powered Offline Paper Generation</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 text-muted-foreground space-y-3">
+                     <p>Generate high-quality, standardized question papers for your traditional offline exams in minutes, not days.</p>
+                      <ul className="list-disc list-inside space-y-2">
+                        <li><span className="font-semibold text-foreground">Instant, Unique Sets:</span> In a single click, generate up to 10 unique sets of a question paper with no overlapping questions, eliminating any possibility of leaks.</li>
+                        <li><span className="font-semibold text-foreground">Syllabus-Adherent:</span> Our AI strictly adheres to the provided syllabus, marks distribution, and cognitive level requirements (Bloom's Taxonomy).</li>
+                        <li><span className="font-semibold text-foreground">Format-Ready:</span> Papers are generated in official, print-ready formats (e.g., CBSE, NTA), saving hours of manual formatting.</li>
+                      </ul>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
 
           </div>
