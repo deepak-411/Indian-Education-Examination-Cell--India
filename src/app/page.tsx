@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, BookOpen, BrainCircuit, FileCheck, Target, Eye, Trophy, ShieldCheck, LockKeyhole, Server } from 'lucide-react';
 import { placeholderImages } from '@/lib/placeholder-images';
 import { Logo } from '@/components/logo';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
 
 const featureCards = [
   {
@@ -43,7 +45,7 @@ const missionVisionAim = [
 ];
 
 export default function Home() {
-  const heroImage = placeholderImages.find(p => p.id === "hero-image");
+  const carouselImages = placeholderImages.filter(p => p.id.startsWith('hero-carousel'));
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -97,23 +99,33 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="relative h-64 md:h-full w-full min-h-[300px]">
-               {heroImage && (
-                <Image
-                  src={heroImage.imageUrl}
-                  alt={heroImage.description}
-                  fill
-                  className="object-cover rounded-lg shadow-2xl"
-                  data-ai-hint={heroImage.imageHint}
-                  priority
-                  unoptimized
-                />
-              )}
+            <div className="relative h-64 md:h-full w-full min-h-[300px] rounded-lg overflow-hidden shadow-2xl">
+               <Carousel 
+                 plugins={[Autoplay({ delay: 3000 })]}
+                 className="w-full h-full"
+                 opts={{ loop: true }}
+               >
+                <CarouselContent className="h-full">
+                  {carouselImages.map((image) => (
+                    <CarouselItem key={image.id} className="h-full">
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={image.imageUrl}
+                          alt={image.description}
+                          fill
+                          className="object-cover"
+                          data-ai-hint={image.imageHint}
+                          priority
+                          unoptimized
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
-           {heroImage && (
-            <div className="absolute inset-0 -z-10 bg-primary" />
-          )}
+           <div className="absolute inset-0 -z-10 bg-primary" />
         </section>
 
         <section id="problem" className="py-16 bg-muted/40">

@@ -1,10 +1,22 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-image",
-      "description": "An abstract pattern of interconnected nodes and lines, representing AI and networks.",
-      "imageUrl": "https://images.unsplash.com/photo-1738082956233-b8f1803411d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMG5ldHdvcmt8ZW58MHx8fHwxNzY1NzAxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abstract network"
+      "id": "hero-carousel-1",
+      "description": "A chalkboard with complex math equations written on it.",
+      "imageUrl": "https://images.unsplash.com/photo-1758685848895-e724272475d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaGFsa2JvYXJkJTIwZXF1YXRpb25zfGVufDB8fHx8MTc2ODI4MTgyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chalkboard equations"
+    },
+    {
+      "id": "hero-carousel-2",
+      "description": "A diagram of a scientific concept on a whiteboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1765205560418-60bb4138c283?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzY2llbmNlJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjgyMTE5MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "science diagram"
+    },
+    {
+      "id": "hero-carousel-3",
+      "description": "Multiple choice questions written on a classroom blackboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1643982102543-bc057db646cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibGFja2JvYXJkJTIwcXVlc3Rpb25zfGVufDB8fHx8MTc2ODI4MTgyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blackboard questions"
     },
     {
       "id": "founder-image",
