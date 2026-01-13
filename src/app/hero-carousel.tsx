@@ -25,7 +25,6 @@ export function HeroCarousel() {
                 className="object-cover"
                 data-ai-hint={image.imageHint}
                 priority
-                unoptimized
               />
             </div>
           </CarouselItem>

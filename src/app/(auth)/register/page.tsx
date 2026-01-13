@@ -38,21 +38,22 @@ export default function RegisterPage() {
     }
   }, [state, toast]);
   
-  const handleFormSubmit = (formData: FormData) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (password !== confirmPassword) {
       toast({
         title: 'Password Mismatch',
         description: 'The passwords you entered do not match.',
         variant: 'destructive',
       });
-      // Prevent form submission by not calling the action
       return;
     }
+    const formData = new FormData(event.currentTarget);
     formAction(formData);
   };
 
   return (
-    <Card as="form" action={handleFormSubmit}>
+    <Card as="form" onSubmit={handleFormSubmit}>
       <CardHeader>
         <CardTitle className="font-headline text-2xl">Create an Account</CardTitle>
         <CardDescription>Join our platform to streamline your examination process.</CardDescription>
