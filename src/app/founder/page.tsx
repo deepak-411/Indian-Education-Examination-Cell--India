@@ -42,7 +42,6 @@ export default function FounderPage() {
              <Link href="/#features" className="hover:text-primary-foreground/80">Features</Link>
              <Link href="/#mission" className="hover:text-primary-foreground/80">About Us</Link>
              <Link href="/founder" className="hover:text-primary-foreground/80">Founder</Link>
-             <Link href="/dashboard" className="hover:text-primary-foreground/80">Dashboard</Link>
           </nav>
           <div className="flex items-center justify-end space-x-2">
             <Button variant="secondary" asChild>
