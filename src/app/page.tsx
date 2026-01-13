@@ -179,7 +179,6 @@ export default function Home() {
                         </CardHeader>
                         <CardContent className="p-0 text-muted-foreground text-sm space-y-2">
                            <p>Schedule exams for any institution: Schools (Classes 1-12), Colleges (UG/PG), and Government Bodies.</p>
-                           <p>All exam submissions and results are securely compiled and delivered to the authorized official email, `dk3624897@gmail.com`.</p>
                         </CardContent>
                     </Card>
                 </div>
