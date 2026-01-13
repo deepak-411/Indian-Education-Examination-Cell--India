@@ -6,27 +6,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 
-const governmentCredentials = [
-    "Qualified UPSC Civil Services Examination (CSE) Mains – 2023",
-    "Selected in UPSC – Deputy Central Intelligence Officer (DCIO – Technical)",
-    "Selected in UPSC – CBI Assistant Programmer"
-];
-
-const defenceCredentials = [
-    { text: "Qualified Indian Navy SSC (2023–24)", details: ["Cleared SSB Interview", "Cleared Conference", "Medically Out"] },
-    { text: "Indian Army – Technical Graduate Course (TGC)", details: ["SSB Call Letter Received", "Conference Out"] }
-];
-
-const awards = [
-    "Nominated for Padma Shri Award 2024 (Science & Engineering contribution)",
-    "Winner / Top Performer in multiple national & international hackathons",
-    "Google Cloud Skill Boost – Silver League (AI & Generative Models)",
-    "Young Scientist Awards (National Level)",
-    "KVPY Fellow (SX)",
-    "Scientist for a Day – NASA",
-    "100+ recognitions in innovation, coding, and research",
-];
-
 const ieecVision = [
     "Manual paper setting errors",
     "Repetition and leakage risks",
@@ -110,19 +89,6 @@ export default function FounderPage() {
                     </div>
                 </CardContent>
             </Card>
-            <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><Award className="size-5 text-primary" /> Awards & Recognition</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                    {awards.map((award, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                            <Star className="size-4 text-yellow-500 mt-1 shrink-0" />
-                            <p className="text-muted-foreground text-sm">{award}</p>
-                        </div>
-                    ))}
-                </CardContent>
-            </Card>
           </div>
 
           <div className="lg:col-span-2 space-y-8">
@@ -140,38 +106,6 @@ export default function FounderPage() {
                 </CardContent>
             </Card>
 
-             <Card>
-                <CardHeader>
-                    <CardTitle className="font-headline text-lg flex items-center gap-2"><ShieldCheck className="size-5 text-primary" /> Civil Services & Defence Credentials</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div>
-                        <h4 className="font-semibold text-md mb-2">Civil Services & Government Selections</h4>
-                        {governmentCredentials.map((cred, index) => (
-                            <div key={index} className="flex items-start gap-3 mb-1">
-                                <CheckCircle2 className="size-5 text-green-600 mt-0.5 shrink-0" />
-                                <p className="text-muted-foreground">{cred}</p>
-                            </div>
-                        ))}
-                    </div>
-                     <div>
-                        <h4 className="font-semibold text-md mb-2">Defence Services (SSB Experience)</h4>
-                        {defenceCredentials.map((cred, index) => (
-                            <div key={index} className="mb-2">
-                                <div className="flex items-start gap-3">
-                                    <CheckCircle2 className="size-5 text-blue-600 mt-0.5 shrink-0" />
-                                    <p className="text-muted-foreground font-semibold">{cred.text}</p>
-                                </div>
-                                <ul className='list-disc list-inside ml-8 text-sm text-muted-foreground'>
-                                    {cred.details.map((detail, i) => <li key={i}>{detail}</li>)}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="text-sm text-muted-foreground pt-2 italic border-t mt-4 pt-4">This first-hand experience with high-stakes national examinations directly informs the fairness, integrity, and policy-aware design of the IEEC platform.</p>
-                </CardContent>
-            </Card>
-            
             <Card>
                 <CardHeader>
                     <CardTitle className="font-headline text-lg flex items-center gap-2"><Briefcase className="size-5 text-primary" /> Founder’s Role & Philosophy</CardTitle>
