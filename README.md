@@ -5,7 +5,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 **Indian Education Exam Cell (IEEC)** is a secure, authority-driven software system designed to **generate examination question papers instantly and accurately** for:
 
@@ -116,7 +116,7 @@ Each registered authority can:
   * Teaching notes / covered topics
 * Submit **question paper generation request**
 
-📌 Once submitted:
+ Once submitted:
 
 * The request is added to the **Chief Exam Cell Officer dashboard**
 * All details are emailed automatically
@@ -181,15 +181,6 @@ The system uses a **strong AI-driven algorithm** grounded in **Bloom’s Taxonom
 
 **Designation:** Chief Exam Cell Officer
 
-**Name:** Deepak Kumar
-**Email:** [dk3624897@gmail.com](mailto:dk3624897@gmail.com)
-
-### Login Credentials (Prototype)
-
-```
-Username: dk3624897@gmail.com
-Password: IEEC2026
-```
 
 ### Privileges
 
@@ -234,7 +225,7 @@ Once generated:
 ## 🧰 Tech Stack (Prototype)
 
 * **Frontend:** Next.js, TypeScript, Tailwind CSS
-* **AI Layer:** Gemini / Genkit (conceptual integration)
+* **AI Layer**
 * **Document Export:** `.docx`
 * **Design Style:** Government-grade (CBSE / NTA inspired)
 
@@ -250,7 +241,6 @@ Once generated:
 ## 📞 Contact
 
 **Chief Exam Cell Officer**
-📧 [dk3624897@gmail.com](mailto:dk3624897@gmail.com)
 
 ---
 
