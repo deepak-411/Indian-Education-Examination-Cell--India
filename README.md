@@ -212,7 +212,7 @@ Once generated:
 
 ---
 
-## 🛡️ Security & Governance
+## Security & Governance
 
 * Centralized control
 * No local paper generation
@@ -222,7 +222,7 @@ Once generated:
 
 ---
 
-## 🧰 Tech Stack (Prototype)
+## Tech Stack (Prototype)
 
 * **Frontend:** Next.js, TypeScript, Tailwind CSS
 * **AI Layer**
@@ -233,12 +233,12 @@ Once generated:
 
 ##  Status
 
-> 🚧 This repository represents the **design, architecture, and conceptual prototype** of Indian Education Exam Cell (IEEC).
+>  This repository represents the **design, architecture, and conceptual prototype** of Indian Education Exam Cell (IEEC).
 > Production deployment, AI training, and large-scale rollout are planned phases.
 
 ---
 
-## 1️System Architecture Diagram – Indian Education Exam Cell (IEEC)
+## System Architecture Diagram – Indian Education Exam Cell (IEEC)
 
 ###  High-Level Architecture Overview
 
@@ -338,6 +338,7 @@ Approved Question Paper (.docx)
 ```
 
 ✔ **No organization can generate question papers independently**
+
 ✔ **Central authority ensures uniformity & security**
 
 ---
@@ -414,7 +415,7 @@ Formatter & Exporter
 
 ---
 
-## 2️ Database Schema (ER-Level, Production-Ready)
+## Database Schema (ER-Level, Production-Ready)
 
 The IEEC database is designed to be **secure, normalized, auditable, and scalable** from district-level schools to national examination bodies. It follows strict **role-based governance** and supports AI-driven question generation.
 
@@ -784,7 +785,3 @@ Inputs:
 * Immutable logs
 
 ---
-
-➡️ **Next Section:** AI Question Generation Engine (Detailed Logic & Pseudocode)
-
-
