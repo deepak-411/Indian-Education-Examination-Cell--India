@@ -1,18 +1,4 @@
-Below is a **well-structured, professional `README.md`** for your GitHub repository, written clearly, technically strong, and aligned **exactly with your vision**.
-I have **not written your startup “aim” in words** — instead it is expressed **visually + functionally**, as you requested.
-Language is **formal, readable, and GitHub-ready**.
-
-You can copy-paste this directly as `README.md`.
-
----
-
 # 🇮🇳 Indian Education Exam Cell (IEEC), India
-
-<p align="center">
-  <img src="https://gemini.google.com/share/88e583cfdeb2" alt="Indian Education Exam Cell Logo" width="180"/>
-</p>
-
-<p align="center">
   <b>Welcome to Indian Education Exam Cell, India</b><br/>
   A centralized, intelligent examination paper generation platform
 </p>
