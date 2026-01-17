@@ -1,5 +1,5 @@
-# Firebase Studio
-
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+Entity Type,Requirements,Data Input
+School,Official .edu / .gov Email,"Class 1-12, Stream (Science/Arts/Comm)"
+College/Uni,Official Domain Email,Graduation / Post-Graduation Subjects
+B.Tech/M.Tech,AICTE/UGC Credentials,Branch-specific Syllabus & Notes
+Govt Body,NIC / Gov Email,Competitive Exam Syllabus
