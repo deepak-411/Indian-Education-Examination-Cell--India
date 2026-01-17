@@ -1,15 +1,279 @@
-🏛️ Indian Education Exam Cell (IEEC)An AI-driven Automated Question Paper Generation System (AQPGS) built on Bloom’s Taxonomy and Cognitive Load Theory. IEEC allows educational institutions to generate standardized, high-integrity exam papers from K-12 to Post-Graduation (B.Tech/M.Tech) and Government Service Exams.🏗️ Technical ArchitectureThe system is architected as a multi-tenant platform where Authorities (Schools/Colleges) act as data providers, and the Chief Exam Cell Officer acts as the central processing authority.1. The Core AI Algorithm (Bloom's Integration)The system doesn't just pick questions; it solves a constrained optimization problem.Objective Function:To generate a paper $P$ such that the distribution of marks across Cognitive Levels ($L$) matches the target distribution $D$.$$TargetMarks(L_i) = \text{Total Marks} (M) \times \text{Weightage} (W_i)$$Selection Logic:For every section $S$ in the template:Filter: $\text{Candidates} = \{Q \in \text{QuestionBank} \mid Q_{subject} = S_{subject}, Q_{marks} = S_{req\_marks}, Q_{used} = \text{False}\}$Cognitive Check: Filter $\text{Candidates}$ further based on required $L_i$ (Remembering, Understanding, Applying, Analyzing, Evaluating, Creating).Randomized Sampling: To prevent paper repetition:$$Q_{selected} = \text{random}(\text{Candidates})$$🛠️ Tech StackFrontend: Next.js 14 (App Router), Tailwind CSS, Lucide React.State Management: TanStack Query (React Query) for real-time dashboard updates.AI Engine: Gemini 1.5 Flash / Pro via Google Genkit (for Syllabus parsing and Question mapping).Backend/Database: PostgreSQL (for Question Bank) & Supabase (for Syllabus PDF storage).Export Engine: docx-js for generating Government-standard .docx templates.👔 Administrative WorkflowChief Exam Cell Officer (Super Admin)Primary Identity: dk3624897@gmail.comAccess Level: Full CRUD on all registered organizations.Generation Control: The only authority capable of triggering the POST /api/generate-paper endpoint.Authority Registration & LoginEntity TypeRequirementsData InputSchoolOfficial .edu / .gov EmailClass 1-12, Stream (Science/Arts/Comm)College/UniOfficial Domain EmailGraduation / Post-Graduation SubjectsB.Tech/M.TechAICTE/UGC CredentialsBranch-specific Syllabus & NotesGovt BodyNIC / Gov EmailCompetitive Exam Syllabus📂 System Modules1. Registration & DashboardAuthorities register their details. Upon login, they access a Syllabus Vault.Action: Authorities upload PDF/Docx of Syllabus and Lecture Notes.Trigger: On upload, a notification is dispatched to the Chief Officer and an email is sent to dk3624897@gmail.com.2. The Generation EngineWhen the Chief Officer initiates generation:Syllabus Parsing: AI extracts key topics and Learning Outcomes (COs).Template Selection: Matches CBSE/University format.Algorithmic Selection: Iterates through the Question Bank using the Bloom's Taxonomy logic.DOCX Rendering: Produces a well-formatted document with Header Logos and standard instructions.3. DistributionGenerated papers are automatically pushed to the specific Authority Dashboard under the Exam Cell Section.🚀 Installation & DeploymentBash# Clone the repository
-git clone https://github.com/deepak/ieec-india.git
+Below is a **well-structured, professional `README.md`** for your GitHub repository, written clearly, technically strong, and aligned **exactly with your vision**.
+I have **not written your startup “aim” in words** — instead it is expressed **visually + functionally**, as you requested.
+Language is **formal, readable, and GitHub-ready**.
 
-# Install Technical Dependencies
-npm install
+You can copy-paste this directly as `README.md`.
 
-# Environment Configuration (.env)
-CHIEF_OFFICER_EMAIL=dk3624897@gmail.com
-CHIEF_OFFICER_PWD=IEEC2026
-GEMINI_API_KEY=your_key_here
-DATABASE_URL=your_postgres_url
+---
 
-# Start Production Server
-npm run build && npm start
-📊 Cognitive Level Mapping MatrixLevelProcessSample VerbsWeightage (Typical)L1RememberingDefine, List, State20%L2UnderstandingExplain, Classify30%L3ApplyingSolve, Demonstrate20%L4AnalyzingContrast, Examine15%L5EvaluatingCritique, Justify10%L6CreatingDesign, Formulate5%🛡️ Security ProtocolSession Management: JWT-based stateless authentication.Data Isolation: Row Level Security (RLS) ensures one School cannot see another University's syllabus.Encryption: All uploaded notes and generated papers are encrypted at rest (AES-256).Developed & Maintained by:Deepak KumarChief Exam Cell Officer
+# 🇮🇳 Indian Education Exam Cell (IEEC), India
+
+<p align="center">
+  <img src="https://gemini.google.com/share/88e583cfdeb2" alt="Indian Education Exam Cell Logo" width="180"/>
+</p>
+
+<p align="center">
+  <b>Welcome to Indian Education Exam Cell, India</b><br/>
+  A centralized, intelligent examination paper generation platform
+</p>
+
+---
+
+## 📌 Overview
+
+**Indian Education Exam Cell (IEEC)** is a secure, authority-driven software system designed to **generate examination question papers instantly and accurately** for:
+
+* Schools (Class 1–12)
+* Colleges & Universities
+* Technical Institutions (B.Tech / M.Tech)
+* Government Examination Bodies
+
+The platform dynamically generates **well-structured, government-standard question papers** based on:
+
+* Uploaded syllabus & teaching coverage
+* Marks distribution
+* Class / course / branch
+* Cognitive difficulty levels (Bloom’s Taxonomy)
+
+> ⚠️ **Question paper generation authority is strictly centralized and controlled.**
+
+---
+
+## 🖥️ First Page (Landing Interface)
+
+**Header**
+
+* Center-aligned official IEEC logo
+* Title: **Indian Education Exam Cell, India**
+
+**Visual Sections**
+
+* AIM
+* VISION
+* MISSION
+
+> *(Displayed visually through UI components — not written as descriptive text)*
+
+**Primary Actions**
+
+* 🔹 **Register**
+* 🔹 **Login**
+
+---
+
+## 🏛️ Registration Module
+
+Organizations eligible for registration:
+
+* 🏫 School
+* 🏢 College
+* 🎓 University
+* 🏛️ Government Body
+
+### Registration Requirements
+
+* Organization name
+* Type of authority
+* Official email ID (mandatory verification)
+* Address & jurisdiction
+* Authorized signatory details
+
+> Only verified organizations are allowed to proceed.
+
+---
+
+## 🔐 Authentication & Login
+
+After successful registration:
+
+* Organizations log in based on their category
+* Role-based dashboard access is granted
+
+Supported academic structures after login:
+
+### 🏫 Schools
+
+* Class 1–10
+* Class 11–12
+
+  * Science
+  * Arts
+  * Commerce
+
+### 🎓 Graduation
+
+* Subject-wise separation
+
+### 🛠️ B.Tech
+
+* Branch-wise separation (all branches)
+
+### 🔬 M.Tech
+
+* Branch-wise separation (all branches)
+
+---
+
+## 📊 Authority Dashboard (Organization Side)
+
+Each registered authority can:
+
+* View organization profile
+* Select:
+
+  * Class / Course / Branch
+  * Subject
+  * Total marks
+* Upload:
+
+  * Complete syllabus
+  * Teaching notes / covered topics
+* Submit **question paper generation request**
+
+📌 Once submitted:
+
+* The request is added to the **Chief Exam Cell Officer dashboard**
+* All details are emailed automatically
+
+---
+
+## 🧠 AI-Powered Question Paper Generation
+
+The system uses a **strong AI-driven algorithm** grounded in **Bloom’s Taxonomy** to ensure academic quality and balance.
+
+### Bloom’s Cognitive Levels Used
+
+| Level         | Cognitive Process   |
+| ------------- | ------------------- |
+| Remembering   | Recall & identify   |
+| Understanding | Explain & interpret |
+| Applying      | Solve & use         |
+| Analyzing     | Compare & examine   |
+| Evaluating    | Judge & justify     |
+| Creating      | Design & generate   |
+
+---
+
+## ⚙️ Conceptual Algorithm (QPGS)
+
+### Inputs
+
+* Uploaded syllabus & notes
+* Marks requirement
+* Class / course / branch
+* Organization type
+* Paper design template
+
+### Core Components
+
+* **Question Bank (QB)**
+
+  * Tagged with Bloom’s Level, Topic, Marks, Course Outcome
+* **Paper Design Template (PDT)**
+
+  * Section structure
+  * Marks distribution
+  * Bloom’s level percentage
+
+### Generation Flow
+
+1. Initialize paper structure
+2. Calculate target marks per Bloom’s level
+3. Filter eligible questions
+4. Randomized, balanced selection
+5. Continuous validation of difficulty balance
+6. Final verification & formatting
+
+### Output
+
+* Government-standard question paper
+* `.docx` format (CBSE-style printable)
+
+---
+
+## 👤 Chief Exam Cell Officer (Central Authority)
+
+**Designation:** Chief Exam Cell Officer
+
+**Name:** Deepak Kumar
+**Email:** [dk3624897@gmail.com](mailto:dk3624897@gmail.com)
+
+### Login Credentials (Prototype)
+
+```
+Username: dk3624897@gmail.com
+Password: IEEC2026
+```
+
+### Privileges
+
+* View all registered authorities
+* Monitor all requests
+* **Sole authority to generate question papers**
+* Generate papers per organization standards
+* Auto-add generated papers to:
+
+  * Organization dashboard
+  * Exam Cell records
+* Automatic email notifications
+
+---
+
+## 📁 Question Paper Management
+
+Once generated:
+
+* Paper is stored under:
+
+  * School / College / University / Government Body
+  * Class / Course / Branch
+* Visible in:
+
+  * Authority dashboard
+  * Exam Cell section
+* Ready for official printing & conduct
+
+---
+
+## 🛡️ Security & Governance
+
+* Centralized control
+* No local paper generation
+* Role-based access
+* Audit-ready logs
+* Official email verification mandatory
+
+---
+
+## 🧰 Tech Stack (Prototype)
+
+* **Frontend:** Next.js, TypeScript, Tailwind CSS
+* **AI Layer:** Gemini / Genkit (conceptual integration)
+* **Document Export:** `.docx`
+* **Design Style:** Government-grade (CBSE / NTA inspired)
+
+---
+
+## 📌 Status
+
+> 🚧 This repository represents the **design, architecture, and conceptual prototype** of Indian Education Exam Cell (IEEC).
+> Production deployment, AI training, and large-scale rollout are planned phases.
+
+---
+
+## 📞 Contact
+
+**Chief Exam Cell Officer**
+📧 [dk3624897@gmail.com](mailto:dk3624897@gmail.com)
+
+---
+
+If you want next:
+
+* ✅ **System Architecture Diagram**
+* ✅ **Database Schema**
+* ✅ **API Documentation**
+* ✅ **Pitch Deck / Government Proposal**
+* ✅ **Actual Next.js code structure**
+
+Just tell me 👍
