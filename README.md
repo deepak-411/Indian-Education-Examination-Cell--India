@@ -231,16 +231,16 @@ Once generated:
 
 ---
 
-## 📌 Status
+##  Status
 
 > 🚧 This repository represents the **design, architecture, and conceptual prototype** of Indian Education Exam Cell (IEEC).
 > Production deployment, AI training, and large-scale rollout are planned phases.
 
 ---
 
-## 1️⃣ System Architecture Diagram – Indian Education Exam Cell (IEEC)
+## 1️System Architecture Diagram – Indian Education Exam Cell (IEEC)
 
-### 🔷 High-Level Architecture Overview
+###  High-Level Architecture Overview
 
 Indian Education Exam Cell (IEEC) follows a **centralized, authority-driven, secure architecture** where question paper generation power is **strictly controlled by the Chief Exam Cell Officer**, ensuring standardization, confidentiality, and compliance with government examination norms.
 
@@ -342,7 +342,7 @@ Approved Question Paper (.docx)
 
 ---
 
-### 🧠 AI Question Generation Architecture (Internal)
+###  AI Question Generation Architecture (Internal)
 
 ```
 Input Module
@@ -384,7 +384,7 @@ Formatter & Exporter
 
 ---
 
-### 🛡️ Security & Governance Architecture
+###  Security & Governance Architecture
 
 * Centralized generation authority
 * Official email verification mandatory
@@ -395,7 +395,7 @@ Formatter & Exporter
 
 ---
 
-### 📌 Key Architectural Advantages
+###  Key Architectural Advantages
 
 * **Government-grade standardization**
 * **Zero question leakage risk**
@@ -405,7 +405,7 @@ Formatter & Exporter
 
 ---
 
-> ✅ This architecture is suitable for:
+>  This architecture is suitable for:
 >
 > * State Education Boards
 > * CBSE / ICSE–style bodies
@@ -414,17 +414,13 @@ Formatter & Exporter
 
 ---
 
-➡️ **Next Section:** Database Schema (ER-level, production-ready)
-
----
-
-## 2️⃣ Database Schema (ER-Level, Production-Ready)
+## 2️ Database Schema (ER-Level, Production-Ready)
 
 The IEEC database is designed to be **secure, normalized, auditable, and scalable** from district-level schools to national examination bodies. It follows strict **role-based governance** and supports AI-driven question generation.
 
 ---
 
-### 🧩 Core Entity Relationship Overview
+###  Core Entity Relationship Overview
 
 ```
 ORGANIZATION ──┬── USERS
@@ -440,9 +436,9 @@ QUESTION_BANK ──┬── BLOOMS_LEVEL
 
 ---
 
-## 📘 Entity Definitions
+##  Entity Definitions
 
-### 🏛️ ORGANIZATION
+###  ORGANIZATION
 
 Stores registered authorities.
 
@@ -508,7 +504,7 @@ Request made by authority.
 
 ---
 
-### 🧠 BLOOMS_LEVEL
+###  BLOOMS_LEVEL
 
 Cognitive taxonomy mapping.
 
@@ -575,7 +571,7 @@ Compliance & traceability.
 
 ---
 
-## 🛡️ Database Design Principles
+##  Database Design Principles
 
 * Full normalization (3NF)
 * Strong foreign key constraints
@@ -585,11 +581,7 @@ Compliance & traceability.
 
 ---
 
-➡️ **Next Section:** API Documentation (REST + Auth)
-
----
-
-## 3️⃣ API Documentation (REST + Authentication)
+## API Documentation (REST + Authentication)
 
 The IEEC platform exposes **secure, role-based REST APIs** designed for government-grade reliability, auditability, and scalability. All APIs follow REST principles and use JSON for data exchange.
 
@@ -746,7 +738,7 @@ Body: multipart/form-data
 
 ---
 
-## 🧠 AI Engine APIs (Internal)
+##  AI Engine APIs (Internal)
 
 ### Validate Paper Structure
 
@@ -764,7 +756,7 @@ Inputs:
 
 ---
 
-## 📧 Notification APIs
+##  Notification APIs
 
 ### Email Trigger (Internal)
 
@@ -783,7 +775,7 @@ Inputs:
 
 ---
 
-## 🛡️ Security Standards
+##  Security Standards
 
 * HTTPS only
 * JWT expiry & refresh
